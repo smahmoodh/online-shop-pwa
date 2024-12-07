@@ -12,7 +12,7 @@ import Cart from './Pages/Client/Cart';
 // import ProductCategory from './Components/ProductCategory/ProductCategory';
 import ProductCategory from './Components/ProductCategoryWithSortFilter/ProductCategory';
 import Product from './Components/Product/Product';
-
+import * as ServiceWorker from './serviceWorkerRegistration';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -37,3 +37,4 @@ root.render(
   </BrowserRouter>
 );
 
+ServiceWorker.register();
