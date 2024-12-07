@@ -1,6 +1,7 @@
 {
   "short_name": "Online Shop",
   "name": "SMH PWA Online Shop ",
+  "description": "An amazing PWA for online shopping.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -42,12 +43,15 @@
     {
       "src": "screenshot1.png",
       "type": "image/png",
-      "sizes": "640x480"
+      "sizes": "640x480",
+      "form_factor": "narrow"
     },
     {
       "src": "screenshot2.png",
       "type": "image/png",
-      "sizes": "1280x720"
+      "sizes": "1280x720",
+      "form_factor": "wide"
     }
-  ]
+  ],
+  "orientation": "portrait"
 }
