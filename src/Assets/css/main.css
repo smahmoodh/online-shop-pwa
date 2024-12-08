@@ -677,3 +677,7 @@ iframe {
     display: none !important;
 
 }
+
+.ant-modal {
+    direction: rtl;
+}

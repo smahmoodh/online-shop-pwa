@@ -14,26 +14,28 @@ import ProductCategory from './Components/ProductCategoryWithSortFilter/ProductC
 import Product from './Components/Product/Product';
 import * as ServiceWorker from './serviceWorkerRegistration';
 
+import MainContextProvider from './Context/Main/mainContext'; 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
+    <MainContextProvider>
+      <Routes>
 
-    <Routes>
+        <Route path="/" element={<App />} >
+          <Route path="/" element={<HomePage />} />
+          <Route path="/home" element={<Navigate replace to='/' />} />
+          <Route path="/orders" element={<Orders />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route exact path="/cart" element={<Cart />} />
+          <Route path="/category/:slug" element={<ProductCategory />} />
+          <Route path="/product/:slug" element={<Product />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<NotFound />} />
+        </Route>
 
-      <Route path="/" element={<App />} >
-        <Route path="/" element={<HomePage />} />
-        <Route path="/home" element={<Navigate replace to='/' />} />
-        <Route path="/orders" element={<Orders />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route exact path="/cart" element={<Cart />} />
-        <Route path="/category/:slug" element={<ProductCategory />} />
-        <Route path="/product/:slug" element={<Product />} />
-        <Route path="/about" element={<About />} />
-        <Route path="*" element={<NotFound />} />
-      </Route>
-
-    </Routes>
-
+      </Routes>
+    </MainContextProvider>
   </BrowserRouter>
 );
 
